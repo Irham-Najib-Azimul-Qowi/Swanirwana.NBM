@@ -16,37 +16,37 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 w-full flex-grow flex flex-col items-center justify-center text-center px-4 py-20">
+      <div className="relative z-10 w-full flex-grow flex flex-col items-center justify-center text-center px-4 py-16 md:py-20 mt-10 md:mt-0">
         {/* Sticker */}
-        <div className="sticker top-1/4 left-10 md:left-32 rotate-12 text-neon-pink font-syne font-extrabold text-2xl uppercase brutal-border bg-lime-green px-4 py-2 hover:rotate-6 snappy-transition cursor-pointer">
+        <div className="sticker absolute top-[10%] left-4 md:top-1/4 md:left-20 lg:left-32 rotate-12 text-neon-pink font-syne font-extrabold text-lg md:text-2xl uppercase brutal-border bg-lime-green px-3 md:px-4 py-1 md:py-2 hover:rotate-6 snappy-transition cursor-pointer z-20">
           Hype!
         </div>
-        <div className="sticker bottom-1/3 right-10 md:right-32 -rotate-6 text-black font-syne font-extrabold text-xl uppercase brutal-border bg-electric-blue px-4 py-2 hover:-rotate-12 snappy-transition cursor-pointer shadow-none">
+        <div className="sticker absolute bottom-1/4 right-2 md:bottom-1/3 md:right-20 lg:right-32 -rotate-6 text-black font-syne font-extrabold text-sm md:text-xl uppercase brutal-border bg-electric-blue px-3 md:px-4 py-1 md:py-2 hover:-rotate-12 snappy-transition cursor-pointer shadow-none z-20">
           Sold Out Fast
         </div>
 
-        <h1 className="text-7xl md:text-[9rem] font-syne font-extrabold uppercase text-lime-green brutal-shadow mb-6 pt-10" style={{ WebkitTextStroke: '4px black', paintOrder: 'stroke fill' }}>
+        <h1 className="text-6xl sm:text-7xl md:text-[7rem] lg:text-[9rem] font-syne font-extrabold uppercase text-lime-green brutal-shadow mb-4 md:mb-6 pt-10 break-words w-full" style={{ WebkitTextStroke: '3px black', paintOrder: 'stroke fill' }}>
           SWANIRWANA
         </h1>
         
-        <p className="text-2xl md:text-5xl text-black font-syne font-bold uppercase mb-16 bg-lime-green px-6 py-3 brutal-border brutal-shadow inline-block">
+        <p className="text-lg md:text-3xl lg:text-5xl text-black font-syne font-bold uppercase mb-10 md:mb-16 bg-lime-green px-4 md:px-6 py-2 md:py-3 brutal-border brutal-shadow inline-block max-w-[90vw]">
           The Ultimate Brutal Experience
         </p>
 
         <Link
           href="#events"
-          className="flex items-center gap-4 bg-neon-pink text-black font-syne font-extrabold text-3xl md:text-5xl uppercase px-12 py-6 brutal-border brutal-shadow brutal-shadow-hover transition-all snappy-transition"
+          className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 bg-neon-pink text-black font-syne font-extrabold text-xl sm:text-3xl lg:text-5xl uppercase px-8 sm:px-12 py-4 sm:py-6 brutal-border brutal-shadow brutal-shadow-hover transition-all snappy-transition text-center"
         >
-          <Ticket size={48} className="stroke-[3]" />
+          <Ticket size={40} className="stroke-[3] hidden sm:block" />
           GET TICKETS NOW
         </Link>
       </div>
 
       {/* Giant Marquee at the bottom of hero */}
-      <div className="w-full bg-black text-lime-green font-syne font-extrabold uppercase py-6 border-t-8 border-black border-b-4 marquee-container text-5xl mt-auto z-10">
+      <div className="w-full bg-black text-lime-green font-syne font-extrabold uppercase py-4 md:py-6 border-t-8 border-black border-b-4 marquee-container text-2xl md:text-5xl mt-auto z-10">
         <div className="marquee-content">
-          <span className="mx-8">SWANIRWANA FESTIVAL 2026 - TICKET NOW AVAILABLE - SECURE YOUR SPOT</span>
-          <span className="mx-8">SWANIRWANA FESTIVAL 2026 - TICKET NOW AVAILABLE - SECURE YOUR SPOT</span>
+          <span className="mx-4 md:mx-8">SWANIRWANA FESTIVAL 2026 - TICKET NOW AVAILABLE - SECURE YOUR SPOT</span>
+          <span className="mx-4 md:mx-8">SWANIRWANA FESTIVAL 2026 - TICKET NOW AVAILABLE - SECURE YOUR SPOT</span>
         </div>
       </div>
     </section>
