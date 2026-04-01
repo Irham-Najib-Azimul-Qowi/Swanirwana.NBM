@@ -29,7 +29,7 @@ export default function ValueProposition() {
   ];
 
   return (
-    <section id="tentang-kami" className="py-20 md:py-32 bg-safety-orange border-b-8 border-black">
+    <section id="tentang-kami" className="py-20 md:py-32 bg-safety-orange border-b-8 border-black overflow-hidden relative">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         {/* Section Header */}
         <div className="mb-16 md:mb-24 text-center relative flex justify-center px-4">

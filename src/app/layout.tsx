@@ -25,9 +25,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${spaceGrotesk.variable} h-full antialiased`}
+      className={`${syne.variable} ${spaceGrotesk.variable} h-full antialiased overflow-x-hidden`}
     >
-      <body className="min-h-full flex flex-col bg-black text-lime-green font-sans">{children}</body>
+      <body className="min-h-full flex flex-col bg-black text-lime-green font-sans overflow-x-hidden w-full max-w-[100vw]">{children}</body>
     </html>
   );
 }
