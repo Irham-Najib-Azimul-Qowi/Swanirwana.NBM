@@ -4,55 +4,57 @@ export default function ValueProposition() {
   const benefits = [
     {
       id: 1,
-      icon: <ShieldCheck size={48} className="text-amber-500 mb-6" />,
-      title: "Pembayaran Aman",
+      icon: <ShieldCheck size={64} className="text-black stroke-[3]" />,
+      title: "NO SCAMS",
       description:
-        "Transaksi didukung oleh teknologi enkripsi terkini dan terintegrasi dengan berbagai metode pembayaran seperti Xendit, e-Wallet, dan Virtual Account.",
+        "100% SECURE. ENCRYPTED PAYMENTS VIA XENDIT, E-WALLET, OR BANK TRANSFER.",
+      bgColor: "bg-neon-pink"
     },
     {
       id: 2,
-      icon: <Zap size={48} className="text-amber-500 mb-6" />,
-      title: "E-Ticket Instan",
+      icon: <Zap size={64} className="text-black stroke-[3]" />,
+      title: "INSTANT QR",
       description:
-        "Dapatkan tiket Anda seketika setelah pembayaran berhasil via email. Check-in jadi lebih praktis, cukup scan QR code tanpa perlu cetak tiket.",
+        "NO PRINTING REQUIRED. SCAN & MOSH IMMEDIATELY.",
+      bgColor: "bg-electric-blue"
     },
     {
       id: 3,
-      icon: <Globe size={48} className="text-amber-500 mb-6" />,
-      title: "Pilihan Event Beragam",
+      icon: <Globe size={64} className="text-black stroke-[3]" />,
+      title: "UNLIMITED HYPE",
       description:
-        "Dari konser internasional hingga workshop lokal. Ribuan penyelenggara telah mempercayakan event mereka di Mastutik. Cari sesuai minatmu!",
+        "ONLY THE BEST LINEUP. WE CURATE THE MOST BRUTAL EXPERIENCES.",
+      bgColor: "bg-lime-green"
     },
   ];
 
   return (
-    <section id="tentang-kami" className="py-24 bg-gray-50 border-t border-gray-100">
-      <div className="container mx-auto px-4 text-center max-w-5xl">
+    <section id="tentang-kami" className="py-24 md:py-32 bg-safety-orange border-b-8 border-black">
+      <div className="container mx-auto px-4 max-w-7xl">
         {/* Section Header */}
-        <div className="mb-16 max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-            Mengapa Pilih <span className="text-amber-500">mastutik?</span>
+        <div className="mb-24 text-center relative flex justify-center">
+          <h2 className="text-6xl md:text-8xl font-syne font-extrabold text-black uppercase leading-tight z-10 w-fit relative">
+            WHY <span className="text-lime-green brutal-shadow" style={{ WebkitTextStroke: '3px black' }}>SWANIRWANA?</span>
+            <div className="sticker absolute -bottom-8 md:-right-16 md:left-auto left-0 -rotate-6 text-black font-syne font-bold uppercase bg-electric-blue px-6 py-2 text-2xl md:max-w-none max-w-fit">
+              LITERALLY THE BEST
+            </div>
           </h2>
-          <p className="text-gray-600 text-lg">
-            Kami hadir untuk memberikan pengalaman pembelian tiket yang nyaman,
-            aman, dan tanpa hambatan.
-          </p>
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-8">
           {benefits.map((benefit) => (
             <div
               key={benefit.id}
-              className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center hover:-translate-y-2 transition-transform duration-300"
+              className={`${benefit.bgColor} p-10 brutal-border brutal-shadow hover:-translate-y-4 hover:translate-x-2 brutal-shadow-hover transition-transform duration-200 flex flex-col items-center text-center`}
             >
-              <div className="p-4 bg-amber-50 rounded-2xl mb-6">
+              <div className="p-6 bg-white brutal-border mb-8 shadow-[6px_6px_0px_0px_black] rotate-3 hover:-rotate-3 snappy-transition">
                 {benefit.icon}
               </div>
-              <h3 className="text-xl font-bold text-blue-900 mb-3">
+              <h3 className="text-4xl font-syne font-extrabold text-black mb-6 uppercase leading-none">
                 {benefit.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed text-center">
+              <p className="text-black font-space font-bold text-xl uppercase leading-relaxed">
                 {benefit.description}
               </p>
             </div>

@@ -5,121 +5,107 @@ export default function FeaturedEvents() {
   const dummyEvents = [
     {
       id: 1,
-      title: "Konser Pesta Rakyat Sejahtera",
+      title: "DAY 1: THE AWAKENING",
       date: "14 Oct 2026",
-      location: "Stadion Utama, Jakarta",
+      location: "Main Stage",
       price: "Rp 250.000",
-      imageColor: "bg-blue-100",
-      category: "Musik",
+      imageColor: "bg-neon-pink",
+      category: "Lineup",
+      rotation: "-rotate-2",
+      hoverRotation: "hover:rotate-2"
     },
     {
       id: 2,
-      title: "Tech Summit Asia 2026",
-      date: "20 Nov 2026",
-      location: "JCC Senayan, Jakarta",
-      price: "Rp 500.000",
-      imageColor: "bg-amber-100",
-      category: "Konferensi",
+      title: "DAY 2: TROPICAL BASS",
+      date: "15 Oct 2026",
+      location: "Beach Stage",
+      price: "Rp 350.000",
+      imageColor: "bg-electric-blue",
+      category: "Lineup",
+      rotation: "rotate-2",
+      hoverRotation: "hover:-rotate-1"
     },
     {
       id: 3,
-      title: "Pameran Seni Kontemporer",
-      date: "05 Dec 2026",
-      location: "Galeri Nasional, Bali",
-      price: "Rp 150.000",
-      imageColor: "bg-gray-200",
-      category: "Seni",
+      title: "DAY 3: THE CLIMAX",
+      date: "16 Oct 2026",
+      location: "Main Stage",
+      price: "Rp 500.000",
+      imageColor: "bg-lime-green",
+      category: "Lineup",
+      rotation: "-rotate-1",
+      hoverRotation: "hover:rotate-3"
     },
   ];
 
   return (
-    <section id="events" className="py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="events" className="py-32 bg-electric-blue border-b-8 border-black">
+      <div className="container mx-auto px-4 max-w-7xl">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row items-end justify-between mb-12">
-          <div className="max-w-xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-              Event Populer
-            </h2>
-            <p className="text-gray-600 text-lg">
-              Jangan lewatkan event-event terbaik yang sedang hangat
-              diperbincangkan saat ini.
-            </p>
+        <div className="flex flex-col mb-20 relative">
+          <h2 className="text-6xl md:text-8xl font-syne font-extrabold text-lime-green brutal-shadow mb-4 uppercase inline-block w-fit" style={{ WebkitTextStroke: '3px black' }}>
+            OFFICIAL LINEUP
+          </h2>
+          <div className="sticker absolute top-0 -right-4 md:right-10 rotate-12 text-black font-syne font-bold uppercase bg-neon-pink px-6 py-2 text-2xl">
+            Don't Miss Out!
           </div>
-          <Link
-            href="/events"
-            className="hidden md:flex items-center text-amber-500 font-semibold hover:text-amber-600 transition-colors"
-          >
-            Lihat Semua Event &rarr;
-          </Link>
         </div>
 
         {/* Events Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-8">
           {dummyEvents.map((event) => (
             <div
               key={event.id}
-              className="group flex flex-col bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all overflow-hidden"
+              className={`group flex flex-col bg-white brutal-border brutal-shadow brutal-shadow-hover snappy-transition ${event.rotation} ${event.hoverRotation} hover:bg-black`}
             >
               {/* Image Placeholder */}
               <div
-                className={`w-full h-56 ${event.imageColor} relative overflow-hidden`}
+                className={`w-full h-64 ${event.imageColor} relative border-b-4 border-black overflow-hidden group-hover:grayscale snappy-transition`}
               >
-                {/* Fallback absolute content if no real image */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-30">
-                  <span className="text-4xl font-bold text-blue-900/50">
-                    Image
+                <div className="absolute inset-0 flex items-center justify-center mix-blend-overlay opacity-50">
+                  <span className="text-6xl font-syne font-extrabold text-black/50 uppercase">
+                    Stage
                   </span>
                 </div>
                 {/* Category badge */}
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-blue-900 shadow-sm">
+                <div className="absolute top-4 left-4 bg-white brutal-border px-4 py-1 text-sm font-syne font-extrabold uppercase text-black shadow-[4px_4px_0px_0px_black] rotate-3 group-hover:-rotate-3 snappy-transition">
                   {event.category}
                 </div>
               </div>
 
               {/* Card Body */}
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-bold text-blue-900 mb-4 line-clamp-2">
+              <div className="p-8 flex flex-col flex-1 group-hover:text-lime-green snappy-transition">
+                <h3 className="text-4xl font-syne font-extrabold text-black group-hover:text-lime-green mb-8 uppercase leading-tight line-clamp-2">
                   {event.title}
                 </h3>
 
-                <div className="flex flex-col gap-3 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Calendar size={16} className="text-amber-500" />
-                    <span>{event.date}</span>
+                <div className="flex flex-col gap-4 mb-8 font-space font-bold uppercase">
+                  <div className="flex items-center gap-4 text-black group-hover:text-neon-pink">
+                    <Calendar size={24} className="stroke-[3]" />
+                    <span className="text-xl">{event.date}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <MapPin size={16} className="text-amber-500" />
-                    <span className="line-clamp-1">{event.location}</span>
+                  <div className="flex items-center gap-4 text-black group-hover:text-electric-blue">
+                    <MapPin size={24} className="stroke-[3]" />
+                    <span className="text-xl line-clamp-1">{event.location}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm font-semibold text-gray-800">
-                    <Tag size={16} className="text-amber-500" />
-                    <span>Mulai dari {event.price}</span>
+                  <div className="flex items-center gap-4 text-black group-hover:text-safety-orange">
+                    <Tag size={24} className="stroke-[3]" />
+                    <span className="text-xl">STARTS AT {event.price}</span>
                   </div>
                 </div>
 
                 {/* Card Action */}
-                <div className="mt-auto pt-4 border-t border-gray-100">
+                <div className="mt-auto pt-4 relative">
                   <Link
                     href={`/events/${event.id}`}
-                    className="flex w-full items-center justify-center py-3 bg-blue-50 text-blue-900 font-bold rounded-xl group-hover:bg-amber-500 group-hover:text-white transition-colors"
+                    className="flex w-full items-center justify-center py-4 bg-safety-orange text-black font-syne font-extrabold text-2xl uppercase brutal-border group-hover:bg-neon-pink group-hover:text-black hover:translate-x-2 transition-transform shadow-[4px_4px_0px_0px_black] group-hover:shadow-none"
                   >
-                    Beli Tiket
+                    SECURE TICKETS
                   </Link>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Mobile View All Button */}
-        <div className="mt-8 md:hidden">
-          <Link
-            href="/events"
-            className="flex items-center justify-center w-full py-4 border-2 border-gray-100 text-blue-900 font-semibold rounded-xl hover:bg-gray-50 transition-colors"
-          >
-            Lihat Semua Event
-          </Link>
         </div>
       </div>
     </section>

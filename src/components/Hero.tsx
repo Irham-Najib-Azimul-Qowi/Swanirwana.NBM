@@ -1,52 +1,52 @@
 import Link from "next/link";
-import { ArrowRight, Ticket } from "lucide-react";
+import Image from "next/image";
+import { Ticket } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-gray-50 pt-20 pb-32 overflow-hidden flex items-center justify-center">
-      {/* Decorative background element */}
-      <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3">
-        <div className="w-96 h-96 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-      </div>
-      <div className="absolute top-0 left-0 translate-y-24 -translate-x-1/3">
-        <div className="w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+    <section className="relative w-full min-h-[90vh] bg-safety-orange flex flex-col justify-center overflow-hidden border-b-8 border-black">
+      {/* Background Image with mix-blend-mode */}
+      <div className="absolute inset-0 z-0 opacity-70 mix-blend-multiply">
+        <Image 
+          src="/images/swanirwana_hero_bg.png" 
+          alt="Swanirwana Festival" 
+          fill
+          className="object-cover"
+          priority
+        />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 text-center max-w-4xl">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-8">
-          <span className="flex h-2 w-2 rounded-full bg-amber-500"></span>
-          <span className="text-sm font-medium text-blue-900">
-            Platform Tiket Event Terpercaya
-          </span>
+      <div className="relative z-10 w-full flex-grow flex flex-col items-center justify-center text-center px-4 py-20">
+        {/* Sticker */}
+        <div className="sticker top-1/4 left-10 md:left-32 rotate-12 text-neon-pink font-syne font-extrabold text-2xl uppercase brutal-border bg-lime-green px-4 py-2 hover:rotate-6 snappy-transition cursor-pointer">
+          Hype!
+        </div>
+        <div className="sticker bottom-1/3 right-10 md:right-32 -rotate-6 text-black font-syne font-extrabold text-xl uppercase brutal-border bg-electric-blue px-4 py-2 hover:-rotate-12 snappy-transition cursor-pointer shadow-none">
+          Sold Out Fast
         </div>
 
-        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-blue-900 leading-tight mb-6">
-          Beli Tiket Event <span className="text-amber-500">Lebih Mudah,</span>{" "}
-          <br className="hidden md:block" />
-          Lebih Cepat
+        <h1 className="text-7xl md:text-[9rem] font-syne font-extrabold uppercase text-lime-green brutal-shadow mb-6 pt-10" style={{ WebkitTextStroke: '4px black', paintOrder: 'stroke fill' }}>
+          SWANIRWANA
         </h1>
-
-        <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Temukan berbagai event menarik dari konser musik, workshop, pameran
-          hingga festival kuliner di sekitar Anda. Pesan sekarang hanya dalam
-          hitungan detik.
+        
+        <p className="text-2xl md:text-5xl text-black font-syne font-bold uppercase mb-16 bg-lime-green px-6 py-3 brutal-border brutal-shadow inline-block">
+          The Ultimate Brutal Experience
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="#events"
-            className="flex items-center gap-2 bg-amber-500 text-white hover:bg-amber-600 font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all w-full sm:w-auto text-lg"
-          >
-            <Ticket size={24} />
-            Cari Event
-          </Link>
-          <Link
-            href="#mitra"
-            className="flex items-center gap-2 bg-white text-blue-900 border border-gray-200 hover:border-gray-300 font-semibold px-8 py-4 rounded-full shadow-sm transition-all w-full sm:w-auto text-lg"
-          >
-            Jadi Penyelenggara
-            <ArrowRight size={20} />
-          </Link>
+        <Link
+          href="#events"
+          className="flex items-center gap-4 bg-neon-pink text-black font-syne font-extrabold text-3xl md:text-5xl uppercase px-12 py-6 brutal-border brutal-shadow brutal-shadow-hover transition-all snappy-transition"
+        >
+          <Ticket size={48} className="stroke-[3]" />
+          GET TICKETS NOW
+        </Link>
+      </div>
+
+      {/* Giant Marquee at the bottom of hero */}
+      <div className="w-full bg-black text-lime-green font-syne font-extrabold uppercase py-6 border-t-8 border-black border-b-4 marquee-container text-5xl mt-auto z-10">
+        <div className="marquee-content">
+          <span className="mx-8">SWANIRWANA FESTIVAL 2026 - TICKET NOW AVAILABLE - SECURE YOUR SPOT</span>
+          <span className="mx-8">SWANIRWANA FESTIVAL 2026 - TICKET NOW AVAILABLE - SECURE YOUR SPOT</span>
         </div>
       </div>
     </section>
